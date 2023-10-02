@@ -1,5 +1,4 @@
  
-package com.mycompany.test2maven;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,9 +10,9 @@ import javax.swing.JTextField;
 public class sunscreens_search extends javax.swing.JFrame {
     private String selectedIngredient = "";
     private int selectedSPF = 0;
-    private final String jdbcUrl = "jdbc:mysql://localhost:3306/sun_proj";
-    private final String username = "root";
-    private final String password = "divdb";
+    private final String jdbcUrl = "jdbc:mysql://localhost:3306/Database_Name";
+    private final String username = "username";
+    private final String password = "password";
     private JTextField resultTextField = new JTextField();
 
     public sunscreens_search() {
@@ -24,9 +23,7 @@ public class sunscreens_search extends javax.swing.JFrame {
     }
 
  
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
@@ -173,27 +170,26 @@ public class sunscreens_search extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+ 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         
         selectedIngredient = jTextArea1.getText();
         performSearch();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    } 
 
-    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
+    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) { 
  
         if (jRadioButton11.isSelected()) {
         selectedSPF = 50;  
     }
-    }//GEN-LAST:event_jRadioButton11ActionPerformed
+    } 
 
-    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) { 
          
         if (jRadioButton11.isSelected()) {
         selectedSPF = 65;  
     }
-    }//GEN-LAST:event_jRadioButton12ActionPerformed
+    } 
 
     private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
          
@@ -202,26 +198,26 @@ public class sunscreens_search extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jRadioButton8ActionPerformed
 
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) { 
         
         if (jRadioButton11.isSelected()) {
         selectedSPF = 30;  
         }
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
+    } 
 
-    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) { 
        
         if (jRadioButton11.isSelected()) {
         selectedSPF = 40;  
     }
-    }//GEN-LAST:event_jRadioButton9ActionPerformed
+    } 
 
-    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) { 
          
         if (jRadioButton11.isSelected()) {
         selectedSPF = 60;  
     }
-    }//GEN-LAST:event_jRadioButton10ActionPerformed
+    } 
 void performSearch() {
     String query = "SELECT Name FROM sundata WHERE Ingredients LIKE ? AND SPF = ?";
     
@@ -248,8 +244,7 @@ void performSearch() {
             resultSet.close();
         }
 
-          
-
+  
          resultTextField.setText(resultText.toString());
         preparedStatement.close();
         connection.close();
@@ -276,8 +271,7 @@ void performSearch() {
 
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -292,5 +286,4 @@ void performSearch() {
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration//GEN-END:variables
-}
+ }
