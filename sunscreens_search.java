@@ -191,12 +191,12 @@ public class sunscreens_search extends javax.swing.JFrame {
     }
     } 
 
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) { 
          
         if (jRadioButton11.isSelected()) {
         selectedSPF = 55;  
     }
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
+    } 
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) { 
         
