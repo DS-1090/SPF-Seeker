@@ -219,23 +219,23 @@ public class sunscreens_search extends javax.swing.JFrame {
     }
     } 
 void performSearch() {
-    String query = "SELECT Name FROM sundata WHERE Ingredients LIKE ? AND SPF = ?";
+    String query = "SELECT Name FROM table_name WHERE Ingredients LIKE ? AND SPF = ?";
     
      StringBuilder resultText = new StringBuilder();
 
     try {
-        Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
+        PreparedStatement preparedSt = conn.prepareStatement(query);
 
          String[] inputIngredients = selectedIngredient.split(",");
         
         for (String ingredient : inputIngredients) {
              ingredient = ingredient.trim();
             
-             preparedStatement.setString(1, "%" + ingredient + "%");
-            preparedStatement.setInt(2, selectedSPF);
+             preparedSt.setString(1, "%" + ingredient + "%");
+            preparedSt.setInt(2, selectedSPF);
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = preparedSt.executeQuery();
 
             while (resultSet.next()) {
                  resultText.append(resultSet.getString("Name")).append("\n");
@@ -246,8 +246,8 @@ void performSearch() {
 
   
          resultTextField.setText(resultText.toString());
-        preparedStatement.close();
-        connection.close();
+        preparedSt.close();
+        conn.close();
     } catch (Exception ex) {
         ex.printStackTrace();
     }
