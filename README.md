@@ -1,5 +1,5 @@
 Sunscreen recommender updated using Java Swings, JDBC, Maven and MySQL, with a database of 40+ Sunscreens. Data collected using Beautiful Soup.
-Allows query of data by listing ingredients or SPF.
+Allows query of data by listing ingredients and SPF.
 
 ![image](https://github.com/user-attachments/assets/16875cad-5e26-4590-a0b1-2b613de8bbf7)
 ![image](https://github.com/user-attachments/assets/7a9b7c4a-ece6-45fe-a0e5-b0d28dadfda2)
