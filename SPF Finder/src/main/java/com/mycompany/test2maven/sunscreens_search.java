@@ -261,7 +261,7 @@ void performSearch() {
                  resultText.append(resultSet.getString("Name")).append("\n");
             }
             if(fl==0){
-                resultText.append("NOT FOUND");
+                resultText.append(ingredient+"-NOT FOUND");
             }
             resultSet.close();
         }
